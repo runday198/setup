@@ -3,6 +3,8 @@
 import { program } from "commander";
 import configManager from "./config.js";
 
+program.name("web-setup | w-s");
+
 program
   .command("create <bundle>")
   .description("Create a bundle.")
