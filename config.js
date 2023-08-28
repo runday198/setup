@@ -173,23 +173,23 @@ const configManager = (function Config() {
   // Bundle Privates
   // ***
 
-  function getBundleList() {
-    return entryConfig.get(bundleListName) || [];
-  }
-
-  function updateBundleList(list) {
-    entryConfig.set(bundleListName, list);
-  }
-
   function initBundle(name) {
     const config = new Conf({ projectName: name });
-    config.set("links", []);
+    config.set(linkListName, []);
   }
 
   function addBundle(name) {
     let list = getBundleList();
     list.push(name);
     updateBundleList(list);
+  }
+
+  function getBundleList() {
+    return entryConfig.get(bundleListName) || [];
+  }
+
+  function updateBundleList(list) {
+    entryConfig.set(bundleListName, list);
   }
 
   function removeBundle(name) {
